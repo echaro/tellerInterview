@@ -45,15 +45,11 @@ public class Main {
     private  String getGroups(String chain, int k){
         String nonDashChain =  chain.replace("-", "").toUpperCase();
         int charactersLength = nonDashChain.length();
-        char[]data = nonDashChain.toCharArray();
         int diff = charactersLength % k;
         int divi = charactersLength / k;
         StringBuilder builder = new StringBuilder();
         if(diff > 0){
-            for(int i=0;i<diff;i++){
-                builder.append(data[i]);
-            }
-
+            builder.append(nonDashChain, 0, diff);
             builder.append("-");
         }
 
